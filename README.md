@@ -40,13 +40,13 @@ individual card.
 
 ## The commands
 
-`:Flash`: Opens the viewer.
+`:Flash` Opens the viewer.
   Once you're there, hitting `j` or `k` will flip the card over, `h` goes to
   the previous card, and `l` goes to the next one. `q` quits the viewer
 
-`:Close`: Quits the viewer.
+`:Close` Quits the viewer.
 
-`:FlashList`: Gets the list of cards and puts them into the quickfix.
+`:FlashList` Gets the list of cards and puts them into the quickfix.
 
 # Legal Stuff
 
