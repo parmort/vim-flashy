@@ -3,6 +3,13 @@
 " Maintainer: Nolan Prochnau <parvus.mortalis@gmail.com>
 
 if exists('g:loaded_flashy') || !exists('*goyo#execute')
-  finish
+  " finish
 endif
 let g:loaded_flashy = 1
+
+function! s:flashlist() abort
+  cexpr flashy#list()
+  copen
+endfunction
+
+command! -nargs=0 FlashList call <SID>flashlist()

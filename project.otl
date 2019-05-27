@@ -1,24 +1,25 @@
 : A plugin for vim that parses a VimL file into flashcards and displays them
 
 Syntax
-	; let g:flashy = [
+	; let g:flash = [
 	;   [ 'Side 1', 'Side 2' ],
 	;   [ 'Side 1', 'Side 2' ],
 	; ]
-[_] 0% Commands
-	[_] Flash
-		: Parse the file and open the viewer
-	[_] Close
-		: Close the open viewer
-	[_] FlashList
-		: List all flashcards in the quickfix then open it
-		; [ Side1, Side2 ]
-[_] Viewer Key Mappings
-	l
-		: Next flashcard
-	h
-		: Previous flashcard
-	j or k
-		: Flip card
-	q
-		: Quit viewer (same as :Close)
+[_] 16% v1.0
+	[_] 33% Commands
+		[_] Flash
+			: Parse the file and open the viewer
+		[_] Close
+			: Close the open viewer
+		[X] FlashList
+			: List all flashcards in the quickfix
+			; [ Side1, Side2 ]
+	[_] Viewer Key Mappings
+		l
+			: Next flashcard
+		h
+			: Previous flashcard
+		j or k
+			: Flip card
+		q
+			: Quit viewer (same as :Close)
