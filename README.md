@@ -1,4 +1,4 @@
-# flashy.vim
+# flashy.vim (WIP)
 
 A vim plugin that parses a VimL file into flashcards and displays them.
 
