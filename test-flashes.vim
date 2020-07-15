@@ -1,4 +1,4 @@
-let g:flash = [
+let g:flashy = [
       \ [ 'Test1', 'Tester1' ],
       \ [ 'Test2', 'Tester2' ],
       \ [ 'Test3', 'Tester3' ],

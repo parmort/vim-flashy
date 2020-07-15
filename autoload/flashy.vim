@@ -11,7 +11,7 @@ endfunction
 function! flashy#list() abort
   let flashes = []
 
-  for flash in g:flash
+  for flash in g:flashy
     let val = '[ ' . flash[0] . ', ' . flash[1] . ' ]'
     call add(flashes, val)
   endfor
