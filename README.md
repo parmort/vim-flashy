@@ -52,4 +52,4 @@ individual card.
 
 This piece of software is licensed under the MIT license (see `LICENSE`).
 
-This plugin copyright (c) 2018 S. Numerius. Some rights reserved.
+This plugin copyright (c) 2018 N. Prochnau. Some rights reserved.
