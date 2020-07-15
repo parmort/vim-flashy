@@ -43,7 +43,7 @@ let g:flashy = [
 
 The flashcards are stored in a list called `g:flashy`. Each sublist is an
 individual card. This list is unlet and let (see `:h let` and `:h unlet`) each
-time `:Flash` is run.
+time `:Flash` or `:FlashList` is run.
 
 # Legal Stuff
 

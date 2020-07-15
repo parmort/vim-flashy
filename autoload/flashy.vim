@@ -43,18 +43,7 @@ function! s:leave() abort
   let g:inFlashy = 0
 endfunction
 
-function! flashy#list() abort
-  let flashes = []
-
-  for flash in g:flashy
-    let val = '[ ' . flash[0] . ', ' . flash[1] . ' ]'
-    call add(flashes, val)
-  endfor
-
-  return flashes
-endfunction
-
-function! flashy#flash() abort
+function! s:sourceVar() abort
   if exists('g:flashy')
     unlet g:flashy
   endif
@@ -68,6 +57,22 @@ function! flashy#flash() abort
   if !exists('g:flashy')
     echoerr 'g:flashy is undefined.'
   endif
+endfunction
+
+function! flashy#list() abort
+  call s:sourceVar()
+  let flashes = []
+
+  for flash in g:flashy
+    let val = '[ ' . flash[0] . ', ' . flash[1] . ' ]'
+    call add(flashes, val)
+  endfor
+
+  return flashes
+endfunction
+
+function! flashy#flash() abort
+  call s:sourceVar()
 
   let g:inFlashy = 1
   tabnew flashyTmp
