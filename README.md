@@ -8,8 +8,8 @@ This plugin requires the use of Junegunn's [Goyo][1]. I personally use his
 plugin manager, [vim-plug][2], as well. Here is the subsequent code for
 installing this using vim-plug.
 
-[1]:https://github.com/junegunn/goyo.vim
-[2]:https://github.com/junegunn/vim-plug
+[1]: https://github.com/junegunn/goyo.vim
+[2]: https://github.com/junegunn/vim-plug
 
 ```vim
 Plug 'junegunn/goyo.vim'
@@ -44,6 +44,16 @@ let g:flashy = [
 The flashcards are stored in a list called `g:flashy`. Each sublist is an
 individual card. This list is unlet and let (see `:h let` and `:h unlet`) each
 time `:Flash` or `:FlashList` is run.
+
+# Some more notes...
+
+If you hook into Goyo's autocommands, the changes you make in there will be set in Flashy. If you want to gate some of the settings, use the following if statement:
+
+```vim
+if exists('g:flashy_loaded') && g:inFlashy == 1
+  " Flashy isn't loaded
+endif
+```
 
 # Legal Stuff
 
