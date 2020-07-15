@@ -4,22 +4,17 @@ A vim plugin that parses a VimL file into flashcards and displays them.
 
 # Installing
 
-## 1. Dependencies
+This plugin requires the use of Junegunn's [Goyo][1]. I personally use his
+plugin manager, [vim-plug][2], as well. Here is the subsequent code for
+installing this using vim-plug.
 
-- [Goyo][d1]
+[1]:https://github.com/junegunn/goyo.vim
+[2]:https://github.com/junegunn/vim-plug
 
-[d1]: https://github.com/junegunn/goyo.vim
-
-## 2. This plugin
-
-Whichever method you use, here's the URL:
-
+```vim
+Plug 'junegunn/goyo.vim'
+Plug 'parmort/vim-flashy'
 ```
-https://github.com/parmort/vim-flashy.git
-```
-
-I personally use Junegunn's vim-plug if any of you are wondering. All you have
-to do is add `Plug 'parmort/vim-flashy'` to your `vimrc`.
 
 # What is it?!?!
 
