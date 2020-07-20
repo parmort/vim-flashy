@@ -40,7 +40,7 @@ function! s:leave() abort
 
   let l:bufnr = bufnr('flashyTmp')
   execute 'bdelete! ' . l:bufnr
-  let g:inFlashy = 0
+  let g:flashy_running = 0
 endfunction
 
 function! s:sourceVar() abort
@@ -74,7 +74,7 @@ endfunction
 function! flashy#flash() abort
   call s:sourceVar()
 
-  let g:inFlashy = 1
+  let g:flashy_running = 1
   tabnew flashyTmp
   call goyo#execute(0, "80x1")
 
@@ -86,9 +86,13 @@ function! flashy#flash() abort
   call s:display()
 
   command -buffer Exit call <SID>leave()
+  nnoremap <silent> <Plug>FlashyFlip i<C-R>=<SID>flip()<CR><ESC>
+  nnoremap <silent> <Plug>FlashyPrev i<C-R>=<SID>prev()<CR><ESC>
+  nnoremap <silent> <Plug>FlashyNext i<C-R>=<SID>next()<CR><ESC>
+
   nnoremap <buffer><silent> q :Exit<CR>
-  nnoremap <buffer><silent> h i<C-R>=<SID>prev()<CR><ESC>
-  nnoremap <buffer><silent> j i<C-R>=<SID>flip()<CR><ESC>
-  nnoremap <buffer><silent> k i<C-R>=<SID>flip()<CR><ESC>
-  nnoremap <buffer><silent> l i<C-R>=<SID>next()<CR><ESC>
+  nmap <buffer> h <Plug>FlashyPrev
+  nmap <buffer> j <Plug>FlashyFlip
+  nmap <buffer> k <Plug>FlashyFlip
+  nmap <buffer> l <Plug>FlashyNext
 endfunction
