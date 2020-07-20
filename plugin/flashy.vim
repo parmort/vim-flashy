@@ -11,7 +11,9 @@ if exists('g:flashy_loaded')
   if !exists('g:flashy_debug')
     finish
   else
+    echohl Error
     echo 'Flashy Reloaded'
+    echohl Normal
   endif
 endif
 

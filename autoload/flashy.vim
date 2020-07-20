@@ -86,13 +86,23 @@ function! flashy#flash() abort
   call s:display()
 
   command -buffer Exit call <SID>leave()
-  nnoremap <silent> <Plug>FlashyFlip i<C-R>=<SID>flip()<CR><ESC>
-  nnoremap <silent> <Plug>FlashyPrev i<C-R>=<SID>prev()<CR><ESC>
-  nnoremap <silent> <Plug>FlashyNext i<C-R>=<SID>next()<CR><ESC>
+  nnoremap <buffer><silent> <Plug>FlashyFlip i<C-R>=<SID>flip()<CR><ESC>
+  nnoremap <buffer><silent> <Plug>FlashyPrev i<C-R>=<SID>prev()<CR><ESC>
+  nnoremap <buffer><silent> <Plug>FlashyNext i<C-R>=<SID>next()<CR><ESC>
 
-  nnoremap <buffer><silent> q :Exit<CR>
-  nmap <buffer> h <Plug>FlashyPrev
-  nmap <buffer> j <Plug>FlashyFlip
-  nmap <buffer> k <Plug>FlashyFlip
-  nmap <buffer> l <Plug>FlashyNext
+  let l:unmap = exists('b:flashy_unmap') ? b:flashy_unmap : g:flashy_unmap
+
+  if l:unmap < 3
+    nnoremap <buffer><silent> q :Exit<CR>
+
+    if l:unmap < 2
+      nmap <buffer> h <Plug>FlashyPrev
+      nmap <buffer> l <Plug>FlashyNext
+
+      if l:unmap < 1
+        nmap <buffer> j <Plug>FlashyFlip
+        nmap <buffer> k <Plug>FlashyFlip
+      endif
+    endif
+  endif
 endfunction
