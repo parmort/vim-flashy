@@ -2,7 +2,7 @@
 " Desc: A flashcard plugin for vim
 " Maintainer: Nolan Prochnau <parvus.mortalis@gmail.com>
 
-if !exists('*goyo#execute')
+if !exists(':Goyo')
   echoerr 'Flashy: Please install goyo!'
   finish
 endif
