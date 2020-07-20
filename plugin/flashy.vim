@@ -2,8 +2,8 @@
 " Desc: A flashcard plugin for vim
 " Maintainer: Nolan Prochnau <parvus.mortalis@gmail.com>
 
-if exists('g:loaded_flashy') || !exists('*goyo#execute')
-  " finish
+if !exists('g:flashy_debug') && (exists('g:loaded_flashy') || !exists('*goyo#execute'))
+  finish
 endif
 let g:loaded_flashy = 1
 
@@ -20,11 +20,5 @@ function! s:flashlist() abort
   endtry
 endfunction
 
-function! s:flash() abort
-  try
-    call flashy#flash()
-  endtry
-endfunction
-
 command! -nargs=0 FlashList call <SID>flashlist()
-command! -nargs=0 Flash call <SID>flash()
+command! -nargs=0 Flash call flashy#flash()
