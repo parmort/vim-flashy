@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `g:flashy_unmap` variable to unmap standard keybindings globally
 - `b:flashy_unmap` variable to unmap, but per file (very helpful for development)
 
+### Changed
+- Renamed `g:inFlashy` to `g:flashy_running`
+- Renamed `g:loaded_flashy` to `g:flashy_loaded`
+
 ## [1.0.0] - 2020-07-15
 ### Added
 - `:Flash` command to open the viewer
