@@ -50,8 +50,12 @@ time `:Flash` or `:FlashList` is run.
 If you hook into Goyo's autocommands, the changes you make in there will be set in Flashy. If you want to gate some of the settings, use the following if statement:
 
 ```vim
-if exists('g:flashy_loaded') && g:inFlashy == 1
+if !exists('g:loaded_flashy') || !g:inFlashy
   " Flashy isn't loaded
+endif
+
+if exists('g:loaded_flashy') && g:inFlashy
+  " Flashy is loaded
 endif
 ```
 
